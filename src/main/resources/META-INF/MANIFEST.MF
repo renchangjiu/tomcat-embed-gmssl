@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.10.11
+Created-By: 11.0.15+10 (Red Hat, Inc.)
+Specification-Title: Apache Tomcat
+Specification-Version: 9.0
+Specification-Vendor: Apache Software Foundation
+Implementation-Title: Apache Tomcat
+Implementation-Version: 9.0.63
+Implementation-Vendor: Apache Software Foundation
+X-Compile-Source-JDK: 8
+X-Compile-Target-JDK: 8
+
