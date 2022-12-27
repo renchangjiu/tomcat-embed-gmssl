@@ -385,7 +385,7 @@
                writeable="false"/>
 
     <operation name="isAllowed"
-               description="Tests whether a client with this IP address value is allowed access by the current valve configuration"
+               description="cc.kkon.Tests whether a client with this IP address value is allowed access by the current valve configuration"
                impact="INFO"
                returnType="boolean">
       <parameter name="ipAddress"
@@ -448,7 +448,7 @@
                writeable="false"/>
 
     <operation name="isAllowed"
-               description="Tests whether a client with this host name is allowed access by the current valve configuration"
+               description="cc.kkon.Tests whether a client with this host name is allowed access by the current valve configuration"
                impact="INFO"
                returnType="boolean">
       <parameter name="hostName"
@@ -511,7 +511,7 @@
                writeable="false"/>
 
     <operation name="isAllowed"
-               description="Tests whether a client with this host name is allowed access by the current valve configuration"
+               description="cc.kkon.Tests whether a client with this host name is allowed access by the current valve configuration"
                impact="INFO"
                returnType="boolean">
       <parameter name="hostName"

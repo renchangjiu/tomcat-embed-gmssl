@@ -20,6 +20,18 @@
 
     <dependencies>
         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+<!--         <dependency> -->
+<!--             <groupId>commons-io</groupId> -->
+<!--             <artifactId>commons-io</artifactId> -->
+<!--             <version>2.11.0</version> -->
+<!--             <scope>test</scope> -->
+<!--         </dependency> -->
+        <dependency>
             <groupId>cc.kkon</groupId>
             <artifactId>gmssl_provider</artifactId>
             <version>2022</version>
@@ -28,6 +40,7 @@
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-annotations-api</artifactId>
             <version>9.0.63</version>
+<!--             <scope>compile</scope> -->
         </dependency>
         <dependency>
             <groupId>javax.mail</groupId>
@@ -62,6 +75,10 @@
                 <exclusion>
                     <groupId>org.apache.tomcat.embed</groupId>
                     <artifactId>tomcat-embed-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.tomcat.embed</groupId>
+                    <artifactId>tomcat-embed-el</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
