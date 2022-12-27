@@ -16,6 +16,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <tomcat.version>9.0.63</tomcat.version>
     </properties>
 
     <dependencies>
@@ -25,12 +26,6 @@
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
-<!--         <dependency> -->
-<!--             <groupId>commons-io</groupId> -->
-<!--             <artifactId>commons-io</artifactId> -->
-<!--             <version>2.11.0</version> -->
-<!--             <scope>test</scope> -->
-<!--         </dependency> -->
         <dependency>
             <groupId>cc.kkon</groupId>
             <artifactId>gmssl_provider</artifactId>
@@ -39,8 +34,7 @@
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-annotations-api</artifactId>
-            <version>9.0.63</version>
-<!--             <scope>compile</scope> -->
+            <version>${tomcat.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.mail</groupId>
@@ -70,7 +64,7 @@
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
-            <version>9.0.63</version>
+            <version>${tomcat.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.tomcat.embed</groupId>
@@ -108,13 +102,13 @@
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-el</artifactId>
-            <version>9.0.63</version>
+            <version>${tomcat.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-websocket</artifactId>
-            <version>9.0.63</version>
+            <version>${tomcat.version}</version>
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
