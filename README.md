@@ -31,6 +31,6 @@
 <dependency>
     <groupId>cc.kkon</groupId>
     <artifactId>tomcat-embed-gmssl</artifactId>
-    <version>9.0.63.x</version>
+    <version>9.0.63.x.1</version>
 </dependency>
 ```
