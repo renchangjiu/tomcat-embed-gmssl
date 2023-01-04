@@ -4,7 +4,7 @@
 
     <groupId>cc.kkon</groupId>
     <artifactId>tomcat-embed-gmssl</artifactId>
-    <version>9.0.63.x.1</version>
+    <version>9.0.63.x.2</version>
     <packaging>jar</packaging>
 
     <description>支持国密 HTTPS 的嵌入式 Tomcat 容器。</description>
@@ -40,7 +40,6 @@
             <groupId>javax.mail</groupId>
             <artifactId>javax.mail-api</artifactId>
             <version>1.5.6</version>
-            <scope>compile</scope>
         </dependency>
 
         <dependency>
@@ -120,6 +119,12 @@
                     <artifactId>tomcat-embed-core</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.13</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -222,7 +227,7 @@
                 <configuration>
                     <serverId>ossrh</serverId>
                     <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
                 </configuration>
             </plugin>
         </plugins>

@@ -3,7 +3,10 @@
 
 版本号说明：x 之前的版本号即为原始 embed tomcat 的版本号
 
-修改内容: 增加了 `cn.gmssl.tomcat` 包下的五个类。
+修改内容: 
+1. 增加了 `cn.gmssl.tomcat` 包下的五个类。
+2. 增加了基于 http client 库的、支持国密 https 的请求工具类(可选)。
+
 
 #### 使用方法(spring boot)：
 ```xml
@@ -31,6 +34,12 @@
 <dependency>
     <groupId>cc.kkon</groupId>
     <artifactId>tomcat-embed-gmssl</artifactId>
-    <version>9.0.63.x.1</version>
+    <version>9.0.63.x.2</version>
+</dependency>
+<!-- 可选 -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.13</version>
 </dependency>
 ```
