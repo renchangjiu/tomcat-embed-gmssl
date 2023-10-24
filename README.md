@@ -8,9 +8,9 @@
 2. 增加了基于 http client 库的、支持国密 https 的请求工具类(可选)。
 
 
-#### 使用方法(spring boot)：
+#### maven 地址：
 ```xml
-
+<!-- 如果使用 spring boot -->
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
@@ -22,24 +22,55 @@
         </exclusion>
     </exclusions>
 </dependency>
-<dependency>
-    <groupId>cc.kkon</groupId>
-    <artifactId>tomcat-embed-gmssl</artifactId>
-    <version>${tomcat-embed-gmssl.version}</version>
-</dependency>
-```
 
-#### maven 地址
-```xml
 <dependency>
     <groupId>cc.kkon</groupId>
     <artifactId>tomcat-embed-gmssl</artifactId>
-    <version>9.0.63.x.2</version>
+    <version>9.0.63.x.4</version>
 </dependency>
+
 <!-- 可选 -->
 <dependency>
     <groupId>org.apache.httpcomponents</groupId>
     <artifactId>httpclient</artifactId>
     <version>4.5.13</version>
 </dependency>
+```
+#### 示例:
+1. spring boot
+   1. yml
+    ```yml
+    server:
+        # spring 限制必须设置该值, 设置为 0, 使用随机端口
+        port: 0
+    ```
+   
+   1. config
+   ```java
+    @Configuration
+    public class WebConfig {
+
+        @Bean
+        public TomcatServletWebServerFactory getFactory() {
+            TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
+            Connector conn1 = Tomcats.buildConnector(8001, "classpath:sm2.auth.both.pfx", "12345678", false);
+            tomcat.addAdditionalTomcatConnectors(conn1);
+            return tomcat;
+        }
+    }
+    ```
+2. 纯 servlet
+```java
+    public void listen() throws Exception {
+        int port = 0;
+        String certPassword = "12345678";
+        String cert = "classpath:sm2.auth.both.pfx";
+
+        Tomcat tomcat = Tomcats.buildGmHttpsTomcat(port, cert, certPassword, false);
+        Tomcats.addServlet(tomcat, new EchoServlet());
+        // add...
+        tomcat.start();
+        // 阻塞
+        tomcat.getServer().await();
+    }
 ```

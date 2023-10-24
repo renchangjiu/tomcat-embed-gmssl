@@ -4,7 +4,7 @@
 
     <groupId>cc.kkon</groupId>
     <artifactId>tomcat-embed-gmssl</artifactId>
-    <version>9.0.63.x.2</version>
+    <version>9.0.63.x.4</version>
     <packaging>jar</packaging>
 
     <description>支持国密 HTTPS 的嵌入式 Tomcat 容器。</description>
@@ -20,12 +20,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>cc.kkon</groupId>
             <artifactId>gmssl_provider</artifactId>
@@ -125,6 +119,12 @@
             <artifactId>httpclient</artifactId>
             <version>4.5.13</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
