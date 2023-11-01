@@ -26,7 +26,7 @@
 <dependency>
     <groupId>cc.kkon</groupId>
     <artifactId>tomcat-embed-gmssl</artifactId>
-    <version>9.0.63.x.4</version>
+    <version>9.0.63.x.5</version>
 </dependency>
 
 <!-- 可选 -->
