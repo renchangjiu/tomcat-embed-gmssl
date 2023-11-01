@@ -3,7 +3,6 @@ package cc.kkon.request;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpVersion;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
@@ -23,16 +22,11 @@ import java.util.*;
  */
 public class GmSSLRequests {
 
-    private static final HttpClient client;
 
     private static final String ENCODING = "UTF-8";
 
 
     private static final int timeout = 30 * 1000;
-
-    static {
-        client = ClientBuilder.initGMSSL();
-    }
 
     public static Response0 post(String url, Map<String, String> params, Map<String, String> headers) throws IOException {
         HttpPost httpPost = new HttpPost(url);
@@ -51,7 +45,7 @@ public class GmSSLRequests {
 
         httpPost.setEntity(new UrlEncodedFormEntity(list, ENCODING));
 
-        HttpResponse response = client.execute(httpPost);
+        HttpResponse response = ClientBuilder.initGMSSL().execute(httpPost);
         Response0 res0 = new Response0(response);
         httpPost.abort();
         return res0;
@@ -66,7 +60,7 @@ public class GmSSLRequests {
 
         httpPost.setEntity(entity);
 
-        HttpResponse response = client.execute(httpPost);
+        HttpResponse response = ClientBuilder.initGMSSL().execute(httpPost);
         Response0 res0 = new Response0(response);
         httpPost.abort();
         return res0;
@@ -81,7 +75,7 @@ public class GmSSLRequests {
         try {
             URIBuilder uriBuilder = new URIBuilder(url);
             // 设置请求参数
-            if (params != null && params.size() != 0) {
+            if (params != null && !params.isEmpty()) {
                 List<NameValuePair> list = new LinkedList<>();
                 for (Map.Entry<String, String> entry : params.entrySet()) {
                     list.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
@@ -102,7 +96,7 @@ public class GmSSLRequests {
         httpGet.setProtocolVersion(HttpVersion.HTTP_1_1);
 
         putHeaders(httpGet, headers);
-        HttpResponse response = client.execute(httpGet);
+        HttpResponse response = ClientBuilder.initGMSSL().execute(httpGet);
 
         Response0 res0 = new Response0(response);
         httpGet.abort();

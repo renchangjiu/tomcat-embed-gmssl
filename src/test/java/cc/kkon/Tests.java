@@ -20,6 +20,6 @@ public class Tests {
         Tomcats.addServlet(tomcat, new EchoServlet());
         tomcat.start();
         // 阻塞
-        tomcat.getServer().await();
+        // tomcat.getServer().await();
     }
 }

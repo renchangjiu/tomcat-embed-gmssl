@@ -4,7 +4,7 @@
 
     <groupId>cc.kkon</groupId>
     <artifactId>tomcat-embed-gmssl</artifactId>
-    <version>9.0.63.x.4</version>
+    <version>9.0.63.x.5</version>
     <packaging>jar</packaging>
 
     <description>支持国密 HTTPS 的嵌入式 Tomcat 容器。</description>
@@ -205,6 +205,7 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- 本地打包时注释掉 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
@@ -219,6 +220,8 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- 本地打包时注释掉 -->
+
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
