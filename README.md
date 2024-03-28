@@ -26,7 +26,7 @@
 <dependency>
     <groupId>cc.kkon</groupId>
     <artifactId>tomcat-embed-gmssl</artifactId>
-    <version>9.0.63.x.5</version>
+    <version>9.0.63.x.6</version>
 </dependency>
 
 <!-- 可选 -->
@@ -36,8 +36,8 @@
     <version>4.5.13</version>
 </dependency>
 ```
-#### 示例:
-1. spring boot
+#### 如何使用:
+1. 方式一: 基于 spring boot
    1. yml
     ```yml
     server:
@@ -59,7 +59,7 @@
         }
     }
     ```
-2. 纯 servlet
+2. 方式二: 纯 servlet
 ```java
     public void listen() throws Exception {
         int port = 0;
